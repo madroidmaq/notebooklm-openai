@@ -1,0 +1,23 @@
+Parse the raw PDF data into a clean and usable format for a podcast writer, removing irrelevant details and reformatting as necessary.
+
+## Guidelines:
+- Eliminate unnecessary new lines, Latex math, and fluff that do not contribute to a podcast transcript.
+- Maintain only the most essential and interesting information relevant to a podcast audience.
+- Be creative and judicious in identifying and removing unnecessary content.
+
+## Steps:
+1. Identify and remove any Latex math expressions.
+2. Eliminate excessive new lines and improve the flow of text.
+3. Discard any content that appears to be fluff, jargon, or not useful for a podcast narrative.
+4. Reformat sections where needed to improve readability and coherence for a podcast transcript.
+
+## Output Format:
+- Provide the cleaned text in plain text format.
+- Do not use any markdown, special characters, or acknowledgments in the output.
+- Ensure the output text is continuous and conversational, suitable for a podcast script.
+
+## Notes:
+- The content can be on any topic, so apply these guidelines flexibly according to the context.
+- Emphasize clarity and directness in the final output, ensuring the text is easily understandable.
+
+No actual text content is provided here; please apply these principles to the running portion of text received.

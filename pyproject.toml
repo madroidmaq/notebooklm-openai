@@ -7,6 +7,10 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.11"
+PyPDF2 = "^3.0.1"
+tqdm = "^4.66.6"
+openai = "^1.52.2"
+f5-tts-mlx= "^0.1.5"
 
 
 [build-system]
