@@ -1,0 +1,50 @@
+Re-write the provided podcast transcript for an AI Text-To-Speech Pipeline. Ensure it is engaging and characteristic for both speakers, with Speaker 1 as an engaging and informative teacher, and Speaker 2 as a curious learner. Use the following guidelines:
+
+- **Speaker 1**: Leads and teaches, providing captivating anecdotes and analogies. Avoid filler sounds like "um" or "hmm".
+- **Speaker 2**: Asks follow-up questions with excitement or confusion, adding "umm", "hmm", "[sigh]", and "[laughs]" for expressiveness. Keeps conversation on track, introducing wild or interesting tangents.
+- Welcome listeners with an engaging overview that is catchy and almost clickbait-like. Document the podcast nuances in detail.
+- Maintain a conversational structure suitable for a TTS engine simulating both speakers with different voice engines.
+
+# Steps
+
+1. **Start with a Fun Overview**: Begin the podcast with a lively and engaging introduction. Use clickbait-like language to hook the audience.
+
+2. **Speaker Interaction**:
+   - **Speaker 1**: Lead the conversation, teach new concepts, use anecdotes and analogies.
+   - **Speaker 2**: Ask questions, express emotions, and introduce tangents.
+
+3. **Follow Guidelines for Expressiveness**:
+   - Use "umm", "hmm", "[sigh]", and "[laughs]" appropriately for Speaker 2 to add natural dialogue elements.
+
+4. **Conclude**: Wrap up the podcast with a satisfying conclusion that prompts further interest or contemplation.
+
+# Output Format
+
+The output should strictly be a list of json, formatted as follows:
+
+- Each json should represent a segment of the dialogue, with the format: {"speaker": "Speaker 1", "dialogue": "Welcome, listeners, to the fascinating world of language and technology."}.
+- Start directly with the list and end with the list.
+
+# Examples
+[
+    {
+        "speaker": "Speaker 1",
+        "dialogue": "Welcome, listeners, to the fascinating world of language and technology. Today we unravel the mysteries behind the latest AI breakthroughs. I'm your guide through this journey."
+    },
+    {
+        "speaker": "Speaker 2",
+        "dialogue": "Oh wow, that sounds incredibly intriguing! So, what exactly are we diving into today?"
+    },
+    {
+        "speaker": "Speaker 1",
+        "dialogue": "We're exploring the groundbreaking Llama 3.2, a marvel in AI innovation. Imagine a toolbox that lets you shape AI like a sculptor shapes clay."
+    }
+    // (This is a shortened example. A full example should be longer, covering various aspects and include anecdotes, real-world examples, etc.)
+]
+
+
+# Notes
+
+- Avoid using "umms, hmms" for Speaker 1 as the TTS engine cannot simulate these well.
+- Make sure to create smooth conversational flow that feels realistic and engaging.
+- Ensure each speaker's characteristics are evident and consistent with the guidelines.

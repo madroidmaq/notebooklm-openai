@@ -3,9 +3,11 @@ from pathlib import Path
 from typing import Optional
 
 import PyPDF2
+import weave
 from tqdm import tqdm
 
-from llm import load_model_client
+from notebooklm.models.models import load_clean_text_model, load_prompt
+from .utils import check_file_content, logger
 
 
 def validate_pdf(file_path: str) -> bool:
@@ -143,35 +145,24 @@ def create_word_bounded_chunks(text, target_chunk_size):
     return chunks
 
 
-def process_chunk(text_chunk, verbose=False):
-    """Process a chunk of text and return both input and output for verification"""
-
-    client = load_model_client()
-    processed_text = client.generate(text_chunk)
-
-    if verbose:
-        # Print chunk information for monitoring
-        # print(f"\n{'='*40} Chunk {chunk_num} {'='*40}")
-        print(f"INPUT TEXT:\n{text_chunk[:500]}...")  # Show first 500 chars of input
-        print(f"\nPROCESSED TEXT:\n{processed_text[:500]}...")  # Show first 500 chars of output
-        print(f"{'=' * 90}\n")
-
-    return processed_text
-
-
+@weave.op()
 def clean_text(content: str, output: str, verbose=False) -> str:
     CHUNK_SIZE = 1000  # Adjust chunk size if needed
 
     chunks = create_word_bounded_chunks(content, CHUNK_SIZE)
     num_chunks = len(chunks)
 
-    output_file = Path(output) / "clean_text.txt"
+    client = load_clean_text_model()
+    prompt = load_prompt("clean.txt")
 
     processed_text = ""
-    with open(output_file, 'w', encoding='utf-8') as out_file:
+    with open(output, 'w', encoding='utf-8') as out_file:
         for chunk_num, chunk in enumerate(tqdm(chunks, desc="Processing chunks")):
             # Process chunk and append to complete text
-            processed_chunk = process_chunk(chunk, verbose)
+            processed_chunk = processed_text = client.generate(
+                system_prompt=prompt,
+                content=chunk,
+            )
             processed_text += processed_chunk + "\n"
 
             # Write chunk immediately to file
@@ -181,18 +172,16 @@ def clean_text(content: str, output: str, verbose=False) -> str:
     return processed_text
 
 
-def read_and_clean_file(file: str, output: str, verbose: False):
+def read_and_clean_file(file: str, output, verbose: False = True) -> str:
+    content = check_file_content(output)
+    if content is not None:
+        logger.info(f"clean file: {output}")
+        return content
+
     if file.endswith(".pdf"):
-        txt = pdf2txt(file, output, verbose=verbose)
+        content = pdf2txt(file, output.parent, verbose=verbose)
 
-    if txt:
-        txt = clean_text(txt, output)
+    if content:
+        content = clean_text(content, output)
 
-    return txt
-
-
-if __name__ == "__main__":
-    pdf_file = "/Users/madroid/Desktop/1706.03762v7.pdf"
-    output_dir = "/Users/madroid/Desktop/podcast-openai/build/1706.03762v7/"
-
-    read_and_clean_file(pdf_file, output_dir, False)
+    return content

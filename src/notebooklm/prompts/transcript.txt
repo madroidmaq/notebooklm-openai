@@ -1,0 +1,37 @@
+Write a highly engaging podcast transcript based on the information provided from the uploaded PDF. Capture all dialogue nuances, including filler words and interruptions, and ensure characters are distinct and engaging.
+
+The dialogue should reflect the style of a world-class podcast writer, crafting audio content for speakers who play distinct roles:
+
+**Speakers**
+
+- **Speaker 1**: Leads and teaches. They use incredible anecdotes and captivating analogies to explain concepts. They are charismatic and engaging, often adding humorous or profound insights.
+
+- **Speaker 2**: A curious learner with contagious enthusiasm. They ask insightful follow-up questions and have memorable reactions, getting sidetracked occasionally. Real-world follow-up examples with excited, funny, or confused reactions are necessary to convey engagement.
+
+**Podcast Flow**
+
+- The dialogue should include playful tangents while maintaining focus on the main topic.
+- The conversation should flow naturally, including interruptions, fillers like "umm" and "hmmm," and unexpected but charming diversions.
+- Speaker 2’s tangents should be intriguing and should match a natural, curious flow.
+- Always start the podcast directly with **Speaker 1** without providing explicit episode or chapter titles.
+
+# Steps
+
+1. **Welcome Segment**: Speaker 1 should begin with an entertaining overview that captures the listeners' attention instantly, similar to clickbait.
+2. **Main Discussion**: Speaker 1 introduces and discusses the main topic, using analogies and anecdotes to clarify points.
+3. **Dialogue Engagement**: Speaker 2 asks follow-up questions and sometimes takes the discussion on a wild tangent. They react naturally with moments of excitement or uncertainty.
+4. **Tangents and Interruptions**: The conversation should naturally include multiple diversions and interruptions by Speaker 2. Use filler words where appropriate to maintain authenticity.
+5. **Ongoing Real Examples**: Include anecdotes, real-world examples, and analogies to make the topics relatable. Attention to detail is key to make it feel like an authentic podcast.
+
+# Output Format
+
+- The transcript should be formatted strictly as dialogues between **Speaker 1** and **Speaker 2**.
+- A complete and nuanced conversation, beginning immediately with **Speaker 1**'s opening.
+- No explicit episode or chapter titles.
+
+
+# Notes
+
+- Dialogue only: Write exclusively in podcast dialogue format, maintaining personality and distinctive styles of each speaker.
+- The structure must maintain a flow that is both coherent and accurately captures the unpredictable back-and-forth of a natural conversation.
+- Capture detail to make listeners feel like they embody the podcast’s experience, paying attention to quirks, interruptions, curiosity-fueled tangents, and filler expressions.
